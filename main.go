@@ -29,6 +29,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler)
+	fmt.Println("Listening on: http://localhost:3000")
 	if err := http.ListenAndServe(":3000", nil); err != nil {
 		fmt.Println("KEK:", err)
 	}
