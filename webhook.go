@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 	"os/exec"
 )
 
@@ -19,6 +20,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		//fmt.Println("Zashel v handler")
 		cmd2 := exec.Command("../Dostap-Backend/deploy.sh")
 		err2 := cmd2.Run()
+		cmd2.Stdout = os.Stdout
+		cmd2.Stderr = os.Stderr
 		//fmt.Println("after cmd2 run")
 		if err2 != nil {
 			//fmt.Println("KEK ERR2")
