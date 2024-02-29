@@ -18,7 +18,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "POST":
 		//fmt.Println("Zashel v handler")
-		cmd2 := exec.Command("../Dostap-Backend/deploy.sh")
+		cmd2 := exec.Command("./Dostap-Backend/deploy.sh")
 		err2 := cmd2.Run()
 		cmd2.Stdout = os.Stdout
 		cmd2.Stderr = os.Stderr
